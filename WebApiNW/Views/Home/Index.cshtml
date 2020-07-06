@@ -1,0 +1,101 @@
+﻿
+<script>
+    function fnKontrol1() {
+        var uri = 'http://localhost:51062/Urunler/EnPahali';
+        var sistemUsr = { userName: "Scott", passWord: "HP" };
+
+        $.ajax({
+            url: uri,
+            contentType: "application/json; charset=utf-8",
+            type: "Post",
+            dataType: "json",
+            data: JSON.stringify(sistemUsr),
+                
+            success: function (sonuc) {
+                //alert(sonuc.responseText);
+                if (sonuc.success) {
+                    alert('sonuc.success :' + sonuc.responseText);
+
+                    //window.location = 'Home/DekontBilgisi';
+                }
+                else {
+                    alert('Problem Oluştu:' + sonuc.responseText);
+
+                }
+
+            }
+            ,
+            error: function (jqXHR) {
+
+                alert('jqXHR : ' + jqXHR);
+            }
+
+        });
+
+
+
+
+    }
+
+    //------------------------------------------------------------------------
+
+
+    function fnKontrol1_1() {
+        var uri = 'http://localhost:51062/Urunler/Urunler1_1';
+        var sistemUsr ="user01";
+
+        $.ajax({
+            url: uri,
+             contentType: "application/json; charset=utf-8",
+            type: "POST",
+            dataType: "json",
+            data: {
+                userName: "user01",
+                userPass:"pass01"
+            },
+            success: function (sonuc) {
+                //alert(sonuc.responseText);
+                if (sonuc.success) {
+                    alert('sonuc.success :' + sonuc.responseText);
+
+                    //window.location = 'Home/DekontBilgisi';
+                }
+                else {
+                    alert('Problem Oluştu:' + sonuc);
+
+                }
+
+            }
+            ,
+            error: function (jqXHR) {
+
+                alert('jqXHR : ' + jqXHR);
+            }
+
+        });
+
+
+
+
+    }
+
+
+
+</script>
+
+
+<div class="jumbotron">
+    <h5>....</h5>
+    <br />
+  
+        <button class="btn btn-primary" onclick="fnKontrol1();">
+        </button>
+
+
+  
+    
+
+    
+    
+</div>
+ 
